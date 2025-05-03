@@ -1,3 +1,5 @@
+import { Details } from "./pages/details"
+
 export const initialStore=()=>{
   return{
     message: null,
@@ -19,10 +21,18 @@ export const initialStore=()=>{
 
 export default function storeReducer(store, action = {}) {
   switch(action.type){
+    case 'pokemon_details':
+
+    return {
+      ...store,
+      details: action.payload
+    }
+    
     case 'loadGetPokemon':
 
     return {
-      ...store, pokemons: action.payload
+      ...store, 
+      pokemons: action.payload
     }
   
     case 'add_task':

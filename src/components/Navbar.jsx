@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
+import storeReducer from "../store";
+import useGlobalReducer from "../hooks/useGlobalReducer";
 
 export const Navbar = () => {
+
+const {store, dispatch} = useGlobalReducer
 
 	return (
 		<nav className="navbar navbar-light">
@@ -16,8 +20,6 @@ export const Navbar = () => {
 							</p>
 							<ul className="dropdown-menu">
 								<li className="dropdown-item" href="#">Action</li>
-								<li className="dropdown-item" href="#">Another action</li>
-								<li className="dropdown-item" href="#">Something else here</li>
 							</ul>
 						</div>
 					</Link>
