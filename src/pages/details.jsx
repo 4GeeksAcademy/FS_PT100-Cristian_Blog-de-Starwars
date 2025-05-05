@@ -18,10 +18,15 @@ export const Details = () => {
     }, [])
 
     return (
-        <div>
-            <h3>Name:{store.details?.name}</h3>
-            <p>weight: {store.details?.weight}</p>
+        <div className="container-details mt-4">
+            {store.details?.sprites && (
+                <div>
+                    <h3>Name: {store.details?.name}</h3>
+                    <img src={store.details.sprites.other["official-artwork"].front_default} className="w-25 p-3" />
+                </div>
+            )}
+            <p className="datos">Weight: {store.details?.weight}</p>
         </div>
-    )
-}
+    );
+};
 
