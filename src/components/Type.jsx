@@ -16,7 +16,7 @@ export const Type = ({ name, url }) => {
                 <div className="card-body">
                     <h3 className="card-title">{name}</h3>
                     <div className="botones">
-                    <Link to={'/details/'+id}
+                    <Link to={'/tipos/'+id}
                         className=" btn btn-primary">
                         Learn more
                     </Link>

@@ -22,19 +22,19 @@ ContactService.getOne = async id => {
     }
 }
 
-//---------- Type ----------//
-ContactService.getAllType = async () => {
+//---------- Tipos ----------//
+ContactService.getAllTipos = async () => {
     try {
-        const resp = await fetch('"https://pokeapi.co/api/v2/type');
-        if (!resp.ok) throw new Error('Error feching data getAllType')
-        const data = await resp.json()
+        const resp1 = await fetch('"https://pokeapi.co/api/v2/type');
+        if (!resp1.ok) throw new Error('Error feching data getAllType')
+        const data = await resp1.json()
         return data
     } catch (error) {
         console.log(error);
     }
 }
 
-ContactService.getOneType = async id => {
+ContactService.getOneTipos = async id => {
     try {
         const resp = await fetch('"https://pokeapi.co/api/v2/type/'+id);
         if (!resp.ok) throw new Error('error fetching data getOneType')
@@ -45,11 +45,11 @@ ContactService.getOneType = async id => {
     }
 }
 
-//---------- Location ----------//
-ContactService.getAllLocation = async () => {
+//---------- Region ----------//
+ContactService.getAllRegion = async () => {
     try {
-        const resp = await fetch(' https://pokeapi.co/api/v2/location');
-        if (!resp.ok) throw new Error('Error feching data getAllLocation')
+        const resp = await fetch('https://pokeapi.co/api/v2/region');
+        if (!resp.ok) throw new Error('Error feching data getAllRegion')
         const data = await resp.json()
         return data
     } catch (error) {
@@ -57,15 +57,15 @@ ContactService.getAllLocation = async () => {
     }
 }
 
-ContactService.getOneLocation = async id => {
+ContactService.getOneRegion = async id => {
     try {
-        const resp = await fetch(' https://pokeapi.co/api/v2/location/'+id);
-        if (!resp.ok) throw new Error('error fetching data getOneLocation')
+        const resp = await fetch('https://pokeapi.co/api/v2/region/'+id);
+        if (!resp.ok) throw new Error('error fetching data getOneRegion')
         const data = await resp.json()
         return data
     } catch (error) {
         console.log(error);
     }
 }
-
+   
 export default ContactService

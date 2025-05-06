@@ -21,6 +21,20 @@ export const initialStore=()=>{
 
 export default function storeReducer(store, action = {}) {
   switch(action.type){
+    case 'pokemon_tipos':
+
+    return {
+      ...store,
+      tipos: action.payload
+    }
+
+    case 'pokemon_region':
+
+    return {
+      ...store,
+      region: action.payload
+    }
+
     case 'pokemon_details':
 
     return {

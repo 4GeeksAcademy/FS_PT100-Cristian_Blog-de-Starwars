@@ -2,19 +2,19 @@ import { useEffect } from "react"
 import { useParams } from "react-router-dom"
 import contactService from "../services/ContactServices.jsx"
 import useGlobalReducer from "../hooks/useGlobalReducer"
-import { PokemonCard } from "../components/PokemonCard.jsx";
+import { Location } from "../components/Location.jsx"
 
-export const Details = () => {
+export const Region = () => {
 
     const { id } = useParams()
     const { store, dispatch } = useGlobalReducer()
 
-    const getdetails = async () => {
-        const resp = await contactService.getOne(id)
-        dispatch({ type: 'pokemon_details', payload: resp })
+    const getRegion = async () => {
+        const resp = await contactService.getOneRegion(id)
+        dispatch({ type: 'pokemon_region', payload: resp })
     }
     useEffect(() => {
-        getdetails()
+        getRegion()
     }, [])
 
     return (
@@ -29,4 +29,3 @@ export const Details = () => {
         </div>
     );
 };
-
