@@ -14,9 +14,18 @@ export function StoreProvider({ children }) {
     const [store, dispatch] = useReducer(storeReducer, initialStore())
     // Provide the store and dispatch method to all child components.
     useEffect(() => {
-        ContactService.getAll().then(data =>
+        ContactService.getAll().then(data => {
+            console.log(data);
             dispatch({ type: 'loadGetPokemon', payload: data })
-        )
+        })
+        ContactService.getAllRegion().then(region => {
+            console.log(region);
+            dispatch({ type: 'pokemon_region', payload: region.results })
+        })
+        ContactService.getAllTipos().then(tipos => {
+            console.log(tipos);
+            dispatch({ type: 'pokemon_tipos', payload: tipos.results })
+        })
     }, [])
 
     return <StoreContext.Provider value={{ store, dispatch }}>

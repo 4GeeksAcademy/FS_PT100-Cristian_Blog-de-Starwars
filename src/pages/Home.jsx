@@ -9,7 +9,7 @@ export const Home = () => {
 
 	return (
 		<div>
-		<h1 className="m-3 ms-5">CHARACTERS</h1>
+			<h1 className="m-3 ms-5">CHARACTERS</h1>
 			<div className="scroll-horizontal">
 				<div className="row-horizontal">
 					{store.pokemons?.results?.map((el, i) => (
@@ -17,19 +17,19 @@ export const Home = () => {
 					))}
 				</div>
 			</div>
-		<h1 className="m-3 ms-5">LOCATION</h1>
+			<h1 className="m-3 ms-5">LOCATION</h1>
 			<div className="scroll-horizontal">
 				<div className="row-horizontal">
-					{store.pokemons?.results?.map((el, i) => (
-						<PokemonCard key={i} name={el.name} url={el.url} />
+					{store.region?.map((el, i) => (
+						<Location key={i} name={el.name} url={el.url} />
 					))}
 				</div>
 			</div>
-		<h1 className="m-3 ms-5">TYPES</h1>
+			<h1 className="m-3 ms-5">TYPES</h1>
 			<div className="scroll-horizontal">
 				<div className="row-horizontal">
-					{store.pokemons?.results?.map((el, i) => (
-						<PokemonCard key={i} name={el.name} url={el.url} />
+					{store.tipos?.map((el, i) => (
+						<Type key={i} name={el.name} url={el.url} />
 					))}
 				</div>
 			</div>

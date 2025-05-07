@@ -25,7 +25,7 @@ ContactService.getOne = async id => {
 //---------- Tipos ----------//
 ContactService.getAllTipos = async () => {
     try {
-        const resp1 = await fetch('"https://pokeapi.co/api/v2/type');
+        const resp1 = await fetch('https://pokeapi.co/api/v2/type');
         if (!resp1.ok) throw new Error('Error feching data getAllType')
         const data = await resp1.json()
         return data
@@ -36,7 +36,7 @@ ContactService.getAllTipos = async () => {
 
 ContactService.getOneTipos = async id => {
     try {
-        const resp = await fetch('"https://pokeapi.co/api/v2/type/'+id);
+        const resp = await fetch('https://pokeapi.co/api/v2/type/'+id);
         if (!resp.ok) throw new Error('error fetching data getOneType')
         const data = await resp.json()
         return data

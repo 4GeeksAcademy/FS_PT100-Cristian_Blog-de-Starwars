@@ -4,23 +4,28 @@ export const initialStore=()=>{
   return{
     message: null,
     pokemons: null,
-    todos: [
-      {
-        id: 1,
-        title: "Make the bed",
-        background: null,
-      },
-      {
-        id: 2,
-        title: "Do my homework",
-        background: null,
-      }
-    ]
+    tipos: [],
+    region: [],
+    favoritos: [],
   }
 }
 
 export default function storeReducer(store, action = {}) {
   switch(action.type){
+    case 'deletefavoritos':
+
+    return {
+      ...store,
+      favoritos: store.favoritos.filter(fav => fav.name !== action.payload.name)
+    }
+
+    case 'addfavoritos':
+
+    return {
+      ...store,
+      favoritos: [...store.favoritos, action.payload]
+    }
+
     case 'pokemon_tipos':
 
     return {
