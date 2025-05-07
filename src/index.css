@@ -1,20 +1,33 @@
-.container-details{
+.container-details {
     display: flex;
     flex-direction: column;
     text-align: center;
 }
 
-.datos{
+.datos {
     display: flex;
     align-self: center;
 }
 
-.card-title{
+.card-title {
     display: flex;
     justify-self: center;
 }
 
-.botones{
+.botones {
     display: flex;
     justify-content: space-between;
+}
+
+.scroll-horizontal {
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 2rem;
+}
+
+.row-horizontal {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    flex: 0 0 auto;
 }

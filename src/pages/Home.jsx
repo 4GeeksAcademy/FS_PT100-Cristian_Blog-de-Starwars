@@ -8,15 +8,31 @@ export const Home = () => {
 	const { store, dispatch } = useGlobalReducer()
 
 	return (
-		<div className="scroll-horizontal">
-			<div className="row">
-				<h1>CHARACTERS</h1>
-				{store.pokemons?.results?.map((el, i) => <PokemonCard key={i} name={el.name} url={el.url} />)}
-				<h1>LOCATION</h1>
-				{store.pokemons?.results?.map((el, i) => <Location key={i} name={el.name} url={el.url} />)}
-				<h1>TYPES</h1>
-				{store.pokemons?.results?.map((el, i) => <Type key={i} name={el.name} url={el.url} />)}
+		<div>
+		<h1 className="m-3 ms-5">CHARACTERS</h1>
+			<div className="scroll-horizontal">
+				<div className="row-horizontal">
+					{store.pokemons?.results?.map((el, i) => (
+						<PokemonCard key={i} name={el.name} url={el.url} />
+					))}
+				</div>
+			</div>
+		<h1 className="m-3 ms-5">LOCATION</h1>
+			<div className="scroll-horizontal">
+				<div className="row-horizontal">
+					{store.pokemons?.results?.map((el, i) => (
+						<PokemonCard key={i} name={el.name} url={el.url} />
+					))}
+				</div>
+			</div>
+		<h1 className="m-3 ms-5">TYPES</h1>
+			<div className="scroll-horizontal">
+				<div className="row-horizontal">
+					{store.pokemons?.results?.map((el, i) => (
+						<PokemonCard key={i} name={el.name} url={el.url} />
+					))}
+				</div>
 			</div>
 		</div>
-	);
-}; 
+	)
+}
