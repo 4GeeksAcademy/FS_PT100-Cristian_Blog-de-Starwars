@@ -4,7 +4,7 @@ import useGlobalReducer from "../hooks/useGlobalReducer";
 
 export const Navbar = () => {
 
-	const { store, dispatch } = useGlobalReducer
+	const { store, dispatch } = useGlobalReducer()
 
 	return (
 		<nav className="navbar navbar-light">
@@ -16,10 +16,10 @@ export const Navbar = () => {
 					<Link to="/demo">
 						<div className="dropdown">
 							<p className="btn btn-primary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-								Favorites
+								Favorites {store.favoritos?.length}
 							</p>
 							<ul className="dropdown-menu">
-								<li className="dropdown-item" href="#">Action</li>
+								<li className="dropdown-item">pokemon</li>
 								<li className="dropdown-item" href="#">Action 2</li>
 							</ul>
 						</div>

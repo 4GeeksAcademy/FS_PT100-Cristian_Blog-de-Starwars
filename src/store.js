@@ -14,9 +14,11 @@ export default function storeReducer(store, action = {}) {
   switch(action.type){
     case 'deletefavoritos':
 
+    const aux = store.favoritos.filter(fav => fav !== action.payload)
+
     return {
       ...store,
-      favoritos: store.favoritos.filter(fav => fav.name !== action.payload.name)
+      favoritos: aux
     }
 
     case 'addfavoritos':

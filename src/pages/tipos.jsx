@@ -9,23 +9,14 @@ export const Tipos = () => {
     const { id } = useParams()
     const { store, dispatch } = useGlobalReducer()
 
-    const getTipos = async () => {
-        const resp = await contactService.getOneTipos(id)
-        dispatch({ type: 'pokemon_tipos', payload: resp })
-    }
     useEffect(() => {
-        getTipos()
+        contactService.getOneTipos(id).then(tipos=> 
+            dispatch({ type: 'pokemon_details', payload: tipos }))
     }, [])
 
     return (
         <div className="container-details mt-4">
-            {store.details?.sprites && (
-                <div>
-                    <h3>{store.details?.name}</h3>
-                    <img src={store.details.sprites.other["official-artwork"].front_default} className="w-25 p-3" />
-                </div>
-            )}
-            <p className="datos">Weight: {store.details?.weight}</p>
+            <p className="datos">Name: {store.details?.name}</p>
         </div>
     );
 };
