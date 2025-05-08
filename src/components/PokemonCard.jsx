@@ -11,7 +11,6 @@ export const PokemonCard = ({ name, url }) => {
 
     const handleFav = () => {
         if (store.favoritos.includes(name)) {
-            console.log("hola");
             setIsFav(false)
             return dispatch({ type: "deletefavoritos", payload: name })
         }
