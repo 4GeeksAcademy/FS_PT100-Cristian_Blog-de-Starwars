@@ -4,18 +4,18 @@ import { useEffect, useState } from "react"
 
 export const Type = ({ name, url }) => {
 
-     const { store, dispatch } = useGlobalReducer()
-     const isFav = store.favoritos.includes(name)
-     let aux = url.split('/')
-     let id = aux[6]
- 
-     const handleFav = () => {
-         if (store.favoritos.includes(name)) {
-             return dispatch({ type: "deletefavoritos", payload: name })
-         }
-         return dispatch({ type: "addfavoritos", payload: name })
-     }
- 
+    const { store, dispatch } = useGlobalReducer()
+    const isFav = store.favoritos.includes(name)
+    let aux = url.split('/')
+    let id = aux[6]
+
+    const handleFav = () => {
+        if (store.favoritos.includes(name)) {
+            return dispatch({ type: "deletefavoritos", payload: name })
+        }
+        return dispatch({ type: "addfavoritos", payload: name })
+    }
+
     return (
         <div className="col-sm-6 col-md-4 col-lg-3">
             <div className="card" >
