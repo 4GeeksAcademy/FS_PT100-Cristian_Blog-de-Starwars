@@ -1,16 +1,14 @@
 import { Link } from "react-router-dom";
 import storeReducer from "../store";
 import useGlobalReducer from "../hooks/useGlobalReducer";
+import { useEffect } from "react";
 
 export const Navbar = () => {
 
 	const { store, dispatch } = useGlobalReducer()
 
 	const handleRemoveFavorite = (favToRemove) => {
-		dispatch({
-			type: "deletefavoritos",
-			payload: favToRemove,
-		});
+		dispatch({type: "deletefavoritos", payload: favToRemove});
 	};
 
 	return (
@@ -27,8 +25,8 @@ export const Navbar = () => {
 							</p>
 							<div className="dropdown-menu">
 								<ul>
-									{store.favoritos.map((fav, index) => (
-										<li key={index} className="d-flex justify-content-between">
+									{store.favoritos.map((fav, i) => (
+										<li key={i} className="d-flex justify-content-between">
 											{fav}
 											<button
 												className="btn btn-sm btn-white ms-1"
