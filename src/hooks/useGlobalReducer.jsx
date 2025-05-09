@@ -15,7 +15,6 @@ export function StoreProvider({ children }) {
     // Provide the store and dispatch method to all child components.
     useEffect(() => {
         ContactService.getAll().then(data => {
-            console.log(data);
             dispatch({ type: 'loadGetPokemon', payload: data })
         })
         ContactService.getAllRegion().then(region => {
