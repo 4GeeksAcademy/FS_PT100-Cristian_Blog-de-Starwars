@@ -5,21 +5,16 @@ import { useEffect, useState } from "react"
 export const Location = ({ name, url }) => {
 
     const { store, dispatch } = useGlobalReducer()
-    const [isFav, setIsFav] = useState(store.favoritos.includes(name))
+    const isFav = store.favoritos.includes(name)
     let aux = url.split('/')
     let id = aux[6]
 
     const handleFav = () => {
         if (store.favoritos.includes(name)) {
-            setIsFav(false)
             return dispatch({ type: "deletefavoritos", payload: name })
         }
         return dispatch({ type: "addfavoritos", payload: name })
     }
-
-    useEffect(() => {
-        if (store.favoritos.includes(name)) setIsFav(true)
-    }, [store.favoritos])
 
     return (
         <div className="col-sm-6 col-md-4 col-lg-3">
