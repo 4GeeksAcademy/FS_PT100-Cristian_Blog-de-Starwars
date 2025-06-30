@@ -29,7 +29,7 @@ export const Navbar = () => {
 										<li key={i} className="d-flex justify-content-between">
 											{fav}
 											<button
-												className="btn btn-sm btn-white ms-1"
+												className="btn btn-sm btn-danger ms-1"
 												onClick={() => handleRemoveFavorite(fav)}
 											>
 												X
